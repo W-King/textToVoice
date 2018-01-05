@@ -22,12 +22,14 @@
     button.frame = CGRectMake(100, 100, 100, 100);
     button.backgroundColor = [UIColor blueColor];
     [button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"播放" forState:UIControlStateNormal];
     [self.view addSubview:button];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.frame = CGRectMake(210, 100, 100, 100);
     button1.backgroundColor = [UIColor blueColor];
     [button1 addTarget:self action:@selector(buttonClicked1) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"停止" forState:UIControlStateNormal];
     [self.view addSubview:button1];
 }
 
@@ -38,16 +40,10 @@
 }
 - (void)buttonClicked1
 {
-//    TXSoundPlayer *player = [TXSoundPlayer soundPlayerInstance];
-//    [player stopSpeaking];
-    
     [[PPSoundPlayer soundPlayerInstance] stopSpeaking];
 }
 - (void)ceshi:(NSString *)text
 {
-//    TXSoundPlayer *player = [TXSoundPlayer soundPlayerInstance];
-//    [player play:text];
-    
     [[PPSoundPlayer soundPlayerInstance] play:text];
     
 }
